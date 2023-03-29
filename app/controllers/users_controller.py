@@ -8,7 +8,7 @@ class UserController:
     def __init__(self):
         self.model = UserModel
         self.schema = UsersResponseSchema
-        #self.current_user = current_user
+        self.current_user = current_user
 
     def all(self, query):
         try:
@@ -32,7 +32,7 @@ class UserController:
             }, 200
         except Exception as e:
             return {
-                'message': 'Ocurrio un error aa',
+                'message': 'Ocurrio un error user controller',
                 'error': str(e)
             }, 500
 
@@ -64,7 +64,7 @@ class UserController:
             }, 404
         except Exception as e:
             return {
-                'message': 'Ocurrio un error gg',
+                'message': 'Ocurrio un error getbyid',
                 'error': str(e)
             }, 500
 
@@ -79,7 +79,7 @@ class UserController:
                     'message': f'El usuario {id}, ha sido actualizado'
                 }, 200
             return {
-                'message': 'No se encontro el usuario mencionado'
+                'message': 'No se encontro el usuario mencionado /updateid'
             }, 404
         except Exception as e:
             db.session.rollback()

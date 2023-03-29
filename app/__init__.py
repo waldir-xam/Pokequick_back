@@ -9,7 +9,7 @@ from flask_cors import CORS
 from config import enviroment
 
 app = Flask(__name__)
-CORS(app)
+CORS(app) 
 app.config.from_object(enviroment[getenv("ENVIRONMENT")])
 
 authorizations = {"Bearer": {"type": "apiKey", "in": "header", "name": "Authorization"}}
